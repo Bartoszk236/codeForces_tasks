@@ -4,23 +4,26 @@ package src.problem110a;
 import java.util.Scanner;
 
 public class Main {
+    public static final int MAGIC_NUMBER_FOUR = 4;
+    public static final int MAGIC_NUMBER_SEVEN = 7;
+
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         String s = in.nextLine();
-        char[] chars = s.toCharArray();
+        int luckyCount = countMagicNumbers(s);
+        String luckyCountString = String.valueOf(luckyCount);
+        int luckyCount2 = countMagicNumbers(luckyCountString);
+        if (luckyCount2 == luckyCountString.length()) System.out.print("YES");
+        else System.out.print("NO");
+    }
+
+    public static int countMagicNumbers(String number) {
         int luckyCount = 0;
+        char[] chars = number.toCharArray();
         for (int i = 0; i < chars.length; i++) {
             int n = Character.getNumericValue(chars[i]);
-            if (n == 4 || n == 7) luckyCount++;
+            if (n == MAGIC_NUMBER_FOUR || n == MAGIC_NUMBER_SEVEN) luckyCount++;
         }
-        String luckyCountStr = String.valueOf(luckyCount);
-        char[] luckyCountChars = luckyCountStr.toCharArray();
-        int luckyCount2 = 0;
-        for (int i = 0; i < luckyCountChars.length; i++) {
-            int n = Character.getNumericValue(luckyCountChars[i]);
-            if (n == 4 || n == 7) luckyCount2++;
-        }
-        if (luckyCount2 == luckyCountChars.length) System.out.print("YES");
-        else System.out.print("NO");
+        return luckyCount;
     }
 }

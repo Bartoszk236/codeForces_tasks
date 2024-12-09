@@ -22,8 +22,7 @@ public class Main {
             sb.append(c);
         }
         String result = sb.toString();
-        if (small == big) System.out.println(result.toLowerCase());
-        if (small > big) System.out.println(result.toLowerCase());
+        if (small == big || small > big) System.out.println(result.toLowerCase());
         if (small < big) System.out.println(result.toUpperCase());
     }
 }

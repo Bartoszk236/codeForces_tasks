@@ -13,8 +13,7 @@ public class Main {
             verdicts.add(v);
         }
         List<Integer> sortedVerdicts = new ArrayList<>(verdicts);
-        if (sortedVerdicts.size() > 1) System.out.print("HARD");
-        else if (sortedVerdicts.getFirst() == 1) System.out.print("HARD");
+        if (sortedVerdicts.size() > 1 || sortedVerdicts.getFirst() == 1) System.out.print("HARD");
         else System.out.print("EASY");
     }
 }
