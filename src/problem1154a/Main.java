@@ -3,6 +3,7 @@ package src.problem1154a;
 //22:12 - time of solution
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -25,19 +26,13 @@ public class Main {
         b = sum - x2;
         c = sum - x3;
         if (a + b + c == sum) {
-            list.add(a);
-            list.add(b);
-            list.add(c);
+            list.addAll(Arrays.asList(a, b, c));
         }
         return list;
     }
 
     public static List<Integer> checkSum(int x1, int x2, int x3, int x4) {
-        List<Integer> list = new ArrayList<>();
-        list.add(x1);
-        list.add(x2);
-        list.add(x3);
-        list.add(x4);
+        List<Integer> list = Arrays.asList(x1, x2, x3, x4);
         int sum = Math.max(Math.max(x1, x2), Math.max(x3, x4));
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i) == sum) list.remove(i);

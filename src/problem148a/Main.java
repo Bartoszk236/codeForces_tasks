@@ -14,10 +14,7 @@ public class Main {
         int d = scanner.nextInt();
         int count = 0;
         for (int i = 1; i <= d; i++) {
-            if (i % k == 0) count++;
-            else if (i % l == 0) count++;
-            else if (i % m == 0) count++;
-            else if (i % n == 0) count++;
+            if (i % k == 0 || i % l == 0 || i % m == 0 || i % n == 0) count++;
         }
         System.out.println(count);
     }

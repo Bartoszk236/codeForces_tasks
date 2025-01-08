@@ -14,8 +14,9 @@ public class Main {
         for (int i = 0; i < t; i++) {
             int n = scanner.nextInt();
             List<Integer> results = solve(n);
-            System.out.println(results.size());
-            for (int j = 0; j < results.size(); j++) {
+            int resultSize = results.size();
+            System.out.println(resultSize);
+            for (int j = 0; j < resultSize; j++) {
                 System.out.print(results.get(j) + " ");
             }
             System.out.print("\n");

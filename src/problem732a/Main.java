@@ -7,20 +7,20 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int k = scanner.nextInt();//cena
-        int r = scanner.nextInt();//nomianł jednego drobnniaka
+        int priceOfShovel = scanner.nextInt();
+        int denominationOfCoin = scanner.nextInt();
         int result = 0;
         int moneyWithoutPennies = 10;
-        for (int i = r; i < Integer.MAX_VALUE; i += 10) {
-            if (i % k == 0 ) {
+        for (int i = denominationOfCoin; i < Integer.MAX_VALUE; i += 10) {
+            if (i % priceOfShovel == 0 ) {
                 result = i;
                 break;
-            } else if (moneyWithoutPennies % k == 0) {
+            } else if (moneyWithoutPennies % priceOfShovel == 0) {
                 result = moneyWithoutPennies;
                 break;
             }
             moneyWithoutPennies += 10;
         }
-        System.out.println(result / k);
+        System.out.println(result / priceOfShovel);
     }
 }

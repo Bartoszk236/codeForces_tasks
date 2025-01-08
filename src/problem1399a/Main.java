@@ -14,25 +14,34 @@ public class Main {
             for (int j = 0; j < n; j++) {
                 list.add(scanner.nextInt());
             }
-            Set<Integer> set = new HashSet<>(list);
-            List<Integer> result = new ArrayList<>(set);
-            result.sort(Comparator.reverseOrder());
-            if (result.size() == 1) {
+            List<Integer> result = removeDuplicatesAndSort(list);
+            if (weCanRemoveAllNumbers(result) || listHaveOneNumber(result)) {
                 System.out.println("YES");
-                continue;
-            }
-            int count = 0;
-            for (int j = 0; j < result.size() - 1; j++) {
-                if (Math.abs(result.get(j) - result.get(j + 1)) > 1) {
-                    count++;
-                    break;
-                }
-            }
-            if (count > 0) {
-                System.out.println("NO");
             } else {
-                System.out.println("YES");
+                System.out.println("NO");
             }
         }
+    }
+
+    public static List<Integer> removeDuplicatesAndSort(List<Integer> list) {
+        Set<Integer> set = new HashSet<>(list);
+        List<Integer> result = new ArrayList<>(set);
+        result.sort(Comparator.reverseOrder());
+        return result;
+    }
+
+    public static boolean weCanRemoveAllNumbers(List<Integer> list) {
+        int impossibleToRemove = 0;
+        for (int j = 0; j < list.size() - 1; j++) {
+            if (Math.abs(list.get(j) - list.get(j + 1)) > 1) {
+                impossibleToRemove++;
+                break;
+            }
+        }
+        return impossibleToRemove <= 0;
+    }
+
+    public static boolean listHaveOneNumber(List<Integer> list) {
+        return list.size() == 1;
     }
 }
