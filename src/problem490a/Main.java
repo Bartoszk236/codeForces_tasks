@@ -23,15 +23,16 @@ public class Main {
         List<Integer> threeListIndex = new ArrayList<>();
         for (int i = 1; i <= map.size(); i++) {
             if (map.containsKey(i)) {
-                if (map.get(i) == 1) {
+                int value = map.get(i);
+                if (value == 1) {
                     one++;
                     oneListIndex.add(i);
                 }
-                if (map.get(i) == 2) {
+                if (value == 2) {
                     two++;
                     twoListIndex.add(i);
                 }
-                if (map.get(i) == 3) {
+                if (value == 3) {
                     three++;
                     threeListIndex.add(i);
                 }

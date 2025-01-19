@@ -18,12 +18,8 @@ public class Main {
             for (int j = 0; j < COUNT_OF_NUMBERS; j++) {
                 list.add(scanner.nextInt());
             }
-            System.out.println(solve(list));
+            list.sort(Integer::compareTo);
+            System.out.println(list.get(INDEX_OF_MEDIAN_NUMBER));
         }
-    }
-
-    public static int solve(List<Integer> list) {
-        list.sort(Integer::compareTo);
-        return list.get(INDEX_OF_MEDIAN_NUMBER);
     }
 }

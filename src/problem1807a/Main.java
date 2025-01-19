@@ -13,12 +13,8 @@ public class Main {
         for (int i = 0; i < t; i++) {
             List<Integer> list = new ArrayList<>(List.of(
                     scanner.nextInt(), scanner.nextInt(), scanner.nextInt()));
-            System.out.println(solve(list));
+            if (list.getFirst() + list.get(1) == list.get(2)) System.out.println('+');
+            else System.out.println('-');
         }
-    }
-
-    public static Character solve(List<Integer> list) {
-        if (list.getFirst() + list.get(1) == list.get(2)) return '+';
-        else return '-';
     }
 }

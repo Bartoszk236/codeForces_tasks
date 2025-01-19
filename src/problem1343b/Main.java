@@ -31,10 +31,11 @@ public class Main {
         }
         int size = result.size();
         for (int i = 0; i < size; i++) {
+            int number = result.get(i);
             if (i == size - 1) {
-                result.add(result.get(i) + i);
+                result.add(number + i);
             } else {
-                result.add(result.get(i) - 1);
+                result.add(number - 1);
             }
         }
         return result;

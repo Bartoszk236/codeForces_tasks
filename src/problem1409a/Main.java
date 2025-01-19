@@ -25,6 +25,6 @@ public class Main {
         int rest = subtraction % 10;
         int moves = (subtraction - rest) / 10;
         if (rest == 0) return moves;
-        else return moves + 1;
+        return moves + 1;
     }
 }

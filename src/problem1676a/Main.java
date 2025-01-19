@@ -20,6 +20,6 @@ public class Main {
         int sumStart = chars[0] + chars[1] + chars[2];
         int sumEnd = chars[3] + chars[4] + chars[5];
         if (sumStart == sumEnd) return "YES";
-        else return "NO";
+        return "NO";
     }
 }

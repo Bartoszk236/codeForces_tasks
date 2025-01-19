@@ -21,9 +21,12 @@ public class Main {
     }
 
     public static List<Integer> addAll(List<Integer> list) {
-        int ab = list.getFirst() + list.get(1);
-        int ac = list.getFirst() + list.getLast();
-        int bc = list.getLast() + list.get(1);
+        int first = list.getFirst();
+        int last = list.getLast();
+        int center = list.get(1);
+        int ab = first + center;
+        int ac = first + last;
+        int bc = last + center;
         return Arrays.asList(ab, ac, bc);
     }
 

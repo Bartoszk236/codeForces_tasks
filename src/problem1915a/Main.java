@@ -24,6 +24,6 @@ public class Main {
     public static int solve(List<Integer> list) {
         list.sort(Integer::compareTo);
         if (list.getFirst() == list.get(1)) return list.get(2);
-        else return list.getFirst();
+        return list.getFirst();
     }
 }

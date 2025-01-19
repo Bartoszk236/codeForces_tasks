@@ -17,8 +17,9 @@ public class Main {
     }
 
     public static String solve(String line) {
-        String end = line.substring(line.length() - 2);
-        String inside = line.substring(0, line.length() - 2);
+        int length = line.length();
+        String end = line.substring(length - 2);
+        String inside = line.substring(0, length - 2);
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < inside.length(); i++) {
             if (i % 2 == 0) sb.append(inside.charAt(i));

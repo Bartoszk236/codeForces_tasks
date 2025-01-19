@@ -28,8 +28,7 @@ public class Main {
         if (list.getLast() == 'c') count++;
         if (count > 0) {
             return "YES";
-        } else {
-            return "NO";
         }
+        return "NO";
     }
 }
